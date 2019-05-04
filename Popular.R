@@ -4,7 +4,7 @@ library(TMDb)
 api_key <- "b5938e1567468184456894fec22b777a"
 
 ##POPULAR
-#get movie id, title, and release date for upcoming movies
+#get movie id, title, and release date for popular movies
 movie_id_pop <- data.frame(matrix(ncol = 990, nrow = 20))
 movie_title_pop <- data.frame(matrix(ncol = 990, nrow = 20))
 rel_date_pop <- data.frame(matrix(ncol = 990, nrow = 20))
