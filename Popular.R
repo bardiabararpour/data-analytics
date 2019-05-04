@@ -5,10 +5,10 @@ api_key <- "b5938e1567468184456894fec22b777a"
 
 ##POPULAR
 #get movie id, title, and release date for upcoming movies
-movie_id_pop <- data.frame(matrix(ncol = 100, nrow = 20))
-movie_title_pop <- data.frame(matrix(ncol = 100, nrow = 20))
-rel_date_pop <- data.frame(matrix(ncol = 100, nrow = 20))
-for (i in 1:100) {
+movie_id_pop <- data.frame(matrix(ncol = 990, nrow = 20))
+movie_title_pop <- data.frame(matrix(ncol = 990, nrow = 20))
+rel_date_pop <- data.frame(matrix(ncol = 990, nrow = 20))
+for (i in 1:991) {
   movie_id_pop[,i] <- movie_popular(api_key, page = i, language = NA)$results[2]
   movie_title_pop[,i] <- movie_popular(api_key, page = i, language = NA)$results[5]
   rel_date_pop[,i] <- movie_popular(api_key, page = i, language = NA)$results[14]
@@ -41,4 +41,3 @@ df_pop <- subset(df_pop, df_pop$Budget > 1)
 
 #save file
 write.csv(df_pop, "popular.csv")
-
