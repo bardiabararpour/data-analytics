@@ -25,7 +25,7 @@ df_pop <- data.frame(movie_id_pop, movie_title_pop, rel_date_pop)
 df_pop$Rel_Date <- as.Date(df_pop$Rel_Date, format= "%Y-%m-%d")
 df_pop <- subset(df_pop, df_pop$Rel_Date > "2009-12-31" )
 
-#get budget for upcoming movies
+#get budget for popular movies
 budget_pop <- data.frame(matrix(ncol = 1, nrow = dim(df_pop)[1])); colnames(budget) <- "Budget"
 
 for (i in 1:dim(df_pop)[1]) {
