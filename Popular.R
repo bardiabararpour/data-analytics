@@ -1,5 +1,8 @@
 library(TMDb)
 
+#set API key
+api_key <- "b5938e1567468184456894fec22b777a"
+
 ##POPULAR
 #get movie id, title, and release date for upcoming movies
 movie_id_pop <- data.frame(matrix(ncol = 100, nrow = 20))
