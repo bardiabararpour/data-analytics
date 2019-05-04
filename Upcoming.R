@@ -15,7 +15,7 @@ for (i in 1:13) {
   Sys.sleep(2)
 }
 
-#combine into one column
+#combine info one column
 movie_id <- data.frame(unlist(movie_id, use.names=FALSE)); colnames(movie_id) <- "ID"
 movie_title <- data.frame(unlist(movie_title, use.names=FALSE)); colnames(movie_title) <- "Title"
 rel_date <- data.frame(unlist(rel_date, use.names=FALSE)); colnames(rel_date) <- "Rel_Date"
@@ -28,6 +28,6 @@ for (i in 1:dim(movie_id)[1]) {
   Sys.sleep(1)
 }
 
-#combine and filter out movies with budget set to 0
+#combine and filter out movies with no budget listed
 df <- data.frame(movie_id, movie_title, rel_date, budget)
 df <- subset(df, df$Budget > 1)
