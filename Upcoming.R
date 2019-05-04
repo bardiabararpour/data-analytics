@@ -31,3 +31,6 @@ for (i in 1:dim(movie_id)[1]) {
 #combine and filter out movies with no budget listed
 df <- data.frame(movie_id, movie_title, rel_date, budget)
 df <- subset(df, df$Budget > 1)
+
+#save file
+write.csv(df, "upcoming.csv")
