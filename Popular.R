@@ -9,9 +9,10 @@ movie_id_pop <- data.frame(matrix(ncol = 990, nrow = 20))
 movie_title_pop <- data.frame(matrix(ncol = 990, nrow = 20))
 rel_date_pop <- data.frame(matrix(ncol = 990, nrow = 20))
 for (i in 1:991) {
-  movie_id_pop[,i] <- movie_popular(api_key, page = i, language = NA)$results[2]
-  movie_title_pop[,i] <- movie_popular(api_key, page = i, language = NA)$results[5]
-  rel_date_pop[,i] <- movie_popular(api_key, page = i, language = NA)$results[14]
+  movie<-movie_popular(api_key, page = i, language = NA)
+  movie_id_pop[,i] <- movie$results[2]
+  movie_title_pop[,i] <- movie$results[5]
+  rel_date_pop[,i] <- movie$results[14]
   Sys.sleep(2)
 }
 
