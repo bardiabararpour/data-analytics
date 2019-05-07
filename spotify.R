@@ -1,11 +1,11 @@
 library(spotifyr)
 
+#set access token
 Sys.setenv(SPOTIFY_CLIENT_ID = 'HIDDEN')
 Sys.setenv(SPOTIFY_CLIENT_SECRET = 'HIDDEN')
-
 access_token <- get_spotify_access_token()
 
-#get playlist tracks
+#get playlist track name, album, artist, track type, release date, and popularity
 track.name <- data.frame(get_playlist_tracks("37i9dQZEVXbMDoHDwVN2tF", 
                                   authorization = get_spotify_access_token())$track.name)
 colnames(track.name) <- "track_name"
@@ -27,7 +27,7 @@ track.popularity <- data.frame(get_playlist_tracks("37i9dQZEVXbMDoHDwVN2tF",
 colnames(track.popularity) <- "popularity"
 
 
-#for loop to get artist name (only first listed)
+#get artist name (only the first listed)
 track.artist.temp <- get_playlist_tracks("37i9dQZEVXbMDoHDwVN2tF",
                                     authorization = get_spotify_access_token())$track.album.artists
 track.artist <- data.frame(matrix(ncol = 1, nrow = 50))
