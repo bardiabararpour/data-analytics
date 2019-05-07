@@ -1,7 +1,7 @@
 library(TMDb)
 
 #set API key
-api_key <- "b5938e1567468184456894fec22b777a"
+api_key <- "HIDDEN"
 
 ##UPCOMING
 #get movie id, title, and release date for upcoming movies
