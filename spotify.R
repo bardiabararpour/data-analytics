@@ -38,3 +38,7 @@ colnames(track.artist) <- "artist"
 
 #combine
 df = data.frame(track.name, track.album, track.artist, track.type, track.release, track.popularity)
+df$release_date <- as.Date(df$release_date, format= "%Y-%m-%d")
+
+#save file
+write.csv(df, "spotify_top50.csv")
