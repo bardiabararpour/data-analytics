@@ -26,7 +26,6 @@ track.popularity <- data.frame(get_playlist_tracks("37i9dQZEVXbMDoHDwVN2tF",
                                                    authorization = get_spotify_access_token())$track.popularity)
 colnames(track.popularity) <- "popularity"
 
-
 #get artist name (only the first listed)
 track.artist.temp <- get_playlist_tracks("37i9dQZEVXbMDoHDwVN2tF",
                                     authorization = get_spotify_access_token())$track.album.artists
@@ -36,9 +35,22 @@ for (i in (1:50)) {
 }
 colnames(track.artist) <- "artist"
 
+#get track id
+d <- get_track_audio_features("2Fxmhks0bxGSBdJ92vM42m", get_spotify_access_token())
+track.id <- data.frame(get_playlist_tracks("37i9dQZEVXbMDoHDwVN2tF",
+                                           authorization = get_spotify_access_token())$track.id, stringsAsFactors = FALSE)
+colnames(track.id) <- "track.id"
+
+#get features
+track.features <- data.frame(matrix(ncol = 18, nrow = 50))
+for (i in (1:50)) {
+  track.features[i,] <- get_track_audio_features(track.id[i,], get_spotify_access_token())
+}
+colnames(track.features) <- colnames(d)
+
 #combine
-df = data.frame(track.name, track.album, track.artist, track.type, track.release, track.popularity)
+df = data.frame(track.name, track.album, track.artist, track.type, track.release, track.popularity,track.features)
 df$release_date <- as.Date(df$release_date, format= "%Y-%m-%d")
 
 #save file
-write.csv(df, "spotify_top50.csv")
+write.csv(df, "spotify_top50_V2.csv")
