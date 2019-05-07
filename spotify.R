@@ -5,7 +5,7 @@ Sys.setenv(SPOTIFY_CLIENT_ID = 'HIDDEN')
 Sys.setenv(SPOTIFY_CLIENT_SECRET = 'HIDDEN')
 access_token <- get_spotify_access_token()
 
-#get playlist track name, album, artist, track type, release date, and popularity
+#get playlist track name, album, track type, release date, and popularity
 track.name <- data.frame(get_playlist_tracks("37i9dQZEVXbMDoHDwVN2tF", 
                                   authorization = get_spotify_access_token())$track.name)
 colnames(track.name) <- "track_name"
