@@ -140,3 +140,180 @@ t.test(df_b0$liveness,df_b1$liveness, paired=FALSE,var.equal=FALSE, conf.level =
 #artist popularity
 t.test(df_b0$artist.popularity, df_b1$artist.popularity, paired=FALSE,var.equal=FALSE, conf.level = 0.99)
 ##----------t-test between the on billboard vs. not----------##
+
+##----------creating radar charts by year----------##
+#acousticness means by year - on billboard
+acousticness1_2015 <- mean(df_b1[df_b1$release_year==2015,]$acousticness)
+acousticness1_2016 <- mean(df_b1[df_b1$release_year==2016,]$acousticness)
+acousticness1_2017 <- mean(df_b1[df_b1$release_year==2017,]$acousticness)
+acousticness1_2018<- mean(df_b1[df_b1$release_year==2018,]$acousticness)
+#acousticness means by year - not on billboard
+acousticness0_2015 <- mean(df_b0[df_b0$release_year==2015,]$acousticness)
+acousticness0_2016 <- mean(df_b0[df_b0$release_year==2016,]$acousticness)
+acousticness0_2017 <- mean(df_b0[df_b0$release_year==2017,]$acousticness)
+acousticness0_2018<- mean(df_b0[df_b0$release_year==2018,]$acousticness)
+#danceability means by year - on billboard
+danceability1_2015 <- mean(df_b1[df_b1$release_year==2015,]$danceability)
+danceability1_2016 <- mean(df_b1[df_b1$release_year==2016,]$danceability)
+danceability1_2017 <- mean(df_b1[df_b1$release_year==2017,]$danceability)
+danceability1_2018<- mean(df_b1[df_b1$release_year==2018,]$danceability)
+#danceability means by year - not on billboard
+danceability0_2015 <- mean(df_b0[df_b0$release_year==2015,]$danceability)
+danceability0_2016 <- mean(df_b0[df_b0$release_year==2016,]$danceability)
+danceability0_2017 <- mean(df_b0[df_b0$release_year==2017,]$danceability)
+danceability0_2018<- mean(df_b0[df_b0$release_year==2018,]$danceability)
+#energy means by year - on billboard
+energy1_2015 <- mean(df_b1[df_b1$release_year==2015,]$energy)
+energy1_2016 <- mean(df_b1[df_b1$release_year==2016,]$energy)
+energy1_2017 <- mean(df_b1[df_b1$release_year==2017,]$energy)
+energy1_2018<- mean(df_b1[df_b1$release_year==2018,]$energy)
+#energy means by year - not on billboard
+energy0_2015 <- mean(df_b0[df_b0$release_year==2015,]$energy)
+energy0_2016 <- mean(df_b0[df_b0$release_year==2016,]$energy)
+energy0_2017 <- mean(df_b0[df_b0$release_year==2017,]$energy)
+energy0_2018<- mean(df_b0[df_b0$release_year==2018,]$energy)
+#valence means by year - on billboard
+valence1_2015 <- mean(df_b1[df_b1$release_year==2015,]$valence)
+valence1_2016 <- mean(df_b1[df_b1$release_year==2016,]$valence)
+valence1_2017 <- mean(df_b1[df_b1$release_year==2017,]$valence)
+valence1_2018<- mean(df_b1[df_b1$release_year==2018,]$valence)
+#valence means by year - not on billboard
+valence0_2015 <- mean(df_b0[df_b0$release_year==2015,]$valence)
+valence0_2016 <- mean(df_b0[df_b0$release_year==2016,]$valence)
+valence0_2017 <- mean(df_b0[df_b0$release_year==2017,]$valence)
+valence0_2018<- mean(df_b0[df_b0$release_year==2018,]$valence)
+#speechiness means by year - on billboard
+speechiness1_2015 <- mean(df_b1[df_b1$release_year==2015,]$speechiness)
+speechiness1_2016 <- mean(df_b1[df_b1$release_year==2016,]$speechiness)
+speechiness1_2017 <- mean(df_b1[df_b1$release_year==2017,]$speechiness)
+speechiness1_2018<- mean(df_b1[df_b1$release_year==2018,]$speechiness)
+#speechiness means by year - not on billboard
+speechiness0_2015 <- mean(df_b0[df_b0$release_year==2015,]$speechiness)
+speechiness0_2016 <- mean(df_b0[df_b0$release_year==2016,]$speechiness)
+speechiness0_2017 <- mean(df_b0[df_b0$release_year==2017,]$speechiness)
+speechiness0_2018<- mean(df_b0[df_b0$release_year==2018,]$speechiness)
+#liveness means by year - on billboard
+liveness1_2015 <- mean(df_b1[df_b1$release_year==2015,]$liveness)
+liveness1_2016 <- mean(df_b1[df_b1$release_year==2016,]$liveness)
+liveness1_2017 <- mean(df_b1[df_b1$release_year==2017,]$liveness)
+liveness1_2018<- mean(df_b1[df_b1$release_year==2018,]$liveness)
+#liveness means by year - not on billboard
+liveness0_2015 <- mean(df_b0[df_b0$release_year==2015,]$liveness)
+liveness0_2016 <- mean(df_b0[df_b0$release_year==2016,]$liveness)
+liveness0_2017 <- mean(df_b0[df_b0$release_year==2017,]$liveness)
+liveness0_2018<- mean(df_b0[df_b0$release_year==2018,]$liveness)
+#artist_pop means by year - on billboard
+artist_pop1_2015 <- mean(df_b1[df_b1$release_year==2015,]$artist.popularity)/100
+artist_pop1_2016 <- mean(df_b1[df_b1$release_year==2016,]$artist.popularity)/100
+artist_pop1_2017 <- mean(df_b1[df_b1$release_year==2017,]$artist.popularity)/100
+artist_pop1_2018<- mean(df_b1[df_b1$release_year==2018,]$artist.popularity)/100
+#artist_pop means by year - not on billboard
+artist_pop0_2015 <- mean(df_b0[df_b0$release_year==2015,]$artist.popularity)/100
+artist_pop0_2016 <- mean(df_b0[df_b0$release_year==2016,]$artist.popularity)/100
+artist_pop0_2017 <- mean(df_b0[df_b0$release_year==2017,]$artist.popularity)/100
+artist_pop0_2018<- mean(df_b0[df_b0$release_year==2018,]$artist.popularity)/100
+#2015 combined radar chart
+p2015 <- plot_ly(
+  type = 'scatterpolar',
+  fill = 'toself'
+) %>%
+  add_trace(
+    r = c(acousticness0_2015, danceability0_2015, energy0_2015, valence0_2015, speechiness0_2015, 
+          liveness0_2015, artist_pop0_2015,acousticness0_2015),
+    theta = c('acousticness','danceability','energy', 'valence', 'speechiness', 'liveness', 'artist popularity', 'acousticness'),
+    name = 'Not on Billboard'
+  ) %>%
+  add_trace(
+    r = c(acousticness1_2015, danceability1_2015, energy1_2015, valence1_2015, speechiness1_2015, 
+          liveness1_2015, artist_pop1_2015, acousticness1_2015),
+    theta = c('acousticness','danceability','energy', 'valence', 'speechiness', 'liveness', 'artist popularity', 'acousticness'),
+    name = 'On Billboard'
+  ) %>%
+  layout(
+    polar = list(
+      radialaxis = list(
+        visible = T,
+        range = c(0,1)
+      )
+    )
+  )
+p2015
+#2016 combined radar chart
+p2016 <- plot_ly(
+  type = 'scatterpolar',
+  fill = 'toself'
+) %>%
+  add_trace(
+    r = c(acousticness0_2016, danceability0_2016, energy0_2016, valence0_2016, speechiness0_2016, 
+          liveness0_2016, artist_pop0_2016,acousticness0_2016),
+    theta = c('acousticness','danceability','energy', 'valence', 'speechiness', 'liveness', 'artist popularity', 'acousticness'),
+    name = 'Not on Billboard'
+  ) %>%
+  add_trace(
+    r = c(acousticness1_2016, danceability1_2016, energy1_2016, valence1_2016, speechiness1_2016, 
+          liveness1_2016, artist_pop1_2016, acousticness1_2016),
+    theta = c('acousticness','danceability','energy', 'valence', 'speechiness', 'liveness', 'artist popularity', 'acousticness'),
+    name = 'On Billboard'
+  ) %>%
+  layout(
+    polar = list(
+      radialaxis = list(
+        visible = T,
+        range = c(0,1)
+      )
+    )
+  )
+p2016
+#2017 combined radar chart
+p2017 <- plot_ly(
+  type = 'scatterpolar',
+  fill = 'toself'
+) %>%
+  add_trace(
+    r = c(acousticness0_2017, danceability0_2017, energy0_2017, valence0_2017, speechiness0_2017, 
+          liveness0_2017, artist_pop0_2017,acousticness0_2017),
+    theta = c('acousticness','danceability','energy', 'valence', 'speechiness', 'liveness', 'artist popularity', 'acousticness'),
+    name = 'Not on Billboard'
+  ) %>%
+  add_trace(
+    r = c(acousticness1_2017, danceability1_2017, energy1_2017, valence1_2017, speechiness1_2017, 
+          liveness1_2017, artist_pop1_2017, acousticness1_2017),
+    theta = c('acousticness','danceability','energy', 'valence', 'speechiness', 'liveness', 'artist popularity', 'acousticness'),
+    name = 'On Billboard'
+  ) %>%
+  layout(
+    polar = list(
+      radialaxis = list(
+        visible = T,
+        range = c(0,1)
+      )
+    )
+  )
+p2017
+#2018 combined radar chart
+p2018 <- plot_ly(
+  type = 'scatterpolar',
+  fill = 'toself'
+) %>%
+  add_trace(
+    r = c(acousticness0_2018, danceability0_2018, energy0_2018, valence0_2018, speechiness0_2018, 
+          liveness0_2018, artist_pop0_2018,acousticness0_2018),
+    theta = c('acousticness','danceability','energy', 'valence', 'speechiness', 'liveness', 'artist popularity', 'acousticness'),
+    name = 'Not on Billboard'
+  ) %>%
+  add_trace(
+    r = c(acousticness1_2018, danceability1_2018, energy1_2018, valence1_2018, speechiness1_2018, 
+          liveness1_2018, artist_pop1_2018, acousticness1_2018),
+    theta = c('acousticness','danceability','energy', 'valence', 'speechiness', 'liveness', 'artist popularity', 'acousticness'),
+    name = 'On Billboard'
+  ) %>%
+  layout(
+    polar = list(
+      radialaxis = list(
+        visible = T,
+        range = c(0,1)
+      )
+    )
+  )
+p2018
+##----------creating radar charts by year----------##
